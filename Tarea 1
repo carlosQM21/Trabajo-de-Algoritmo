@@ -1,0 +1,831 @@
+Algoritmo TareaFinalEstructuras
+    Definir opc Como Entero
+    Definir num1, num2, num3, l1, l2, l3 Como Real
+    Definir limitN, factorM, tablaNum, nSuma1, nSuma2, vBase, vExp, numFact, numDiv, numPerf, numPrim, tFibo, cantEval Como Entero
+    Definir texto26, texto27, texto28, texto29, texto30 Como Caracter
+    Definir tecla Como Caracter
+    
+    opc <- 0
+    Mientras opc <> 40 Hacer
+        Limpiar Pantalla
+        Escribir "=============================================="
+        Escribir "                MENU PRINCIPAL                "
+        Escribir "=============================================="
+        Escribir "1) Suma de dos numeros"
+        Escribir "2) Verificar par o impar"
+        Escribir "3) Mayor o menor de edad"
+        Escribir "4) Comparar dos numeros (Mayor)"
+        Escribir "5) Comparar tres numeros (Mayor)"
+        Escribir "6) Calcular descuento de compra"
+        Escribir "7) Estado del estudiante"
+        Escribir "8) Clasificar un triangulo"
+        Escribir "9) Estructura Segun (Color)"
+        Escribir "10) Presentar numeros del 1 hasta N"
+        Escribir "11) Sumar los primeros N numeros"
+        Escribir "12) Presentar numeros pares entre 1 y N"
+        Escribir "13) Sumar numeros pares entre 1 y N"
+        Escribir "14) Presentar multiplos de 3"
+        Escribir "15) Multiplos de otro numero (M)"
+        Escribir "16) Tabla de multiplicar"
+        Escribir "17) Multiplicacion por sumas sucesivas"
+        Escribir "18) Potencia por multiplicaciones sucesivas"
+        Escribir "19) Factorial de un numero"
+        Escribir "20) Presentar divisores de un numero"
+        Escribir "21) Determinar si un numero es perfecto"
+        Escribir "22) Determinar si un numero es primo"
+        Escribir "23) Serie de Fibonacci"
+        Escribir "24) Contar cuantos numeros son pares"
+        Escribir "25) Arreglos - Llenar elementos"
+        Escribir "26) Arreglos - Presentar elementos"
+        Escribir "27) Arreglos - Presentar elementos pares"
+        Escribir "28) Arreglos - Presentar elementos impares"
+        Escribir "29) Arreglos - Suma de elementos"
+        Escribir "30) Arreglos - Promedio del arreglo"
+        Escribir "31) Arreglos - Sueldos mayores al basico"
+        Escribir "32) Arreglos - Incrementar 10% a precios"
+        Escribir "33) Arreglos - Buscar el mayor elemento"
+        Escribir "34) Arreglos - Buscar el menor elemento"
+        Escribir "35) Cadenas - Mostrar caracter por caracter"
+        Escribir "36) Cadenas - Mostrar unicamente vocales"
+        Escribir "37) Cadenas - Mostrar unicamente consonantes"
+        Escribir "38) Cadenas - Mostrar signos de puntuacion"
+        Escribir "39) Cadenas - Contar palabras"
+        Escribir "40) Salir"
+        Escribir "=============================================="
+        Escribir "Seleccione una opcion [1-40]:"
+        Leer opc
+        
+        Segun opc Hacer
+            1:
+                Escribir "Ingrese numero1:"
+                Leer num1
+                Escribir "Ingrese numero2:"
+                Leer num2
+                suma(num1,num2)
+            2:
+                Escribir "Ingrese numero:"
+                Leer num1
+                parImpar(num1)
+            3:
+                Escribir "Ingrese la edad:"
+                Leer num1
+                mayorMenorEdad(num1)
+            4:
+                Escribir "Ingrese el numero 1:"
+                Leer num1
+                Escribir "Ingrese el numero 2:"
+                Leer num2
+                compararDosNumeros(num1, num2)
+            5:
+                Escribir "Ingrese el numero 1:"
+                Leer num1
+                Escribir "Ingrese el numero 2:"
+                Leer num2
+                Escribir "Ingrese el numero 3:"
+                Leer num3
+                compararTresNumeros(num1, num2, num3)
+            6:
+                Escribir "Ingrese el monto de la compra:"
+                Leer num1
+                calcularDescuentoCompra(num1)
+            7:
+                Escribir "Ingrese la nota del estudiante (0-100):"
+                Leer num1
+                estadoEstudiante(num1)
+            8:
+                Escribir "Ingrese Lado 1:"
+                Leer l1
+                Escribir "Ingrese Lado 2:"
+                Leer l2
+                Escribir "Ingrese Lado 3:"
+                Leer l3
+                clasificarTriangulo(l1, l2, l3)
+            9:
+                Ejercicio9Cond()
+            10:
+                Ejercicio1()
+            11:
+                Ejercicio2()
+            12:
+                Ejercicio3()
+            13:
+                Ejercicio4()
+            14:
+                Ejercicio5()
+            15:
+                Ejercicio6()
+            16:
+                Ejercicio7()
+            17:
+                Ejercicio8()
+            18:
+                Ejercicio9()
+            19:
+                Ejercicio10()
+            20:
+                Ejercicio11()
+            21:
+                Ejercicio12()
+            22:
+                Ejercicio13()
+            23:
+                Ejercicio14()
+            24:
+                Ejercicio15()
+            25:
+                Ejercicio16()
+            26:
+                Ejercicio17()
+            27:
+                Ejercicio18()
+            28:
+                Ejercicio19()
+            29:
+                Ejercicio20()
+            30:
+                Ejercicio21()
+            31:
+                guia4Ejercicio22()
+            32:
+                Ejercicio23()
+            33:
+                Ejercicio24()
+            34:
+                Ejercicio25()
+            35:
+                Ejercicio26()
+            36:
+                Ejercicio27()
+            37:
+                Ejercicio28()
+            38:
+                Ejercicio29()
+            39:
+                Ejercicio30()
+            40:
+                Escribir "Gracias por su visita, ha salido del sistema..."
+            De Otro Modo:
+                Escribir "Esa opcion no es valida ingrese de [1...40]"
+        FinSegun
+        
+        Si opc <> 40 Entonces
+            Escribir "Presione una tecla para continuar con el Menu..."
+            Leer tecla
+        FinSi
+    FinMientras
+FinAlgoritmo
+
+// ==========================================
+// FUNCIONES Y SUBPROCESOS
+// ==========================================
+
+Funcion suma(num1,num2)
+    Definir sumar Como Real
+    sumar=0
+    Si num1 > 0 y num2 > 0
+        sumar = num1 + num2
+        Escribir num1,"+",num2,"=",sumar
+    SiNo
+        Escribir "Los numeros deben ser positivos"
+    FinSi
+FinFuncion
+
+Funcion parImpar(num1)
+    Si num1 mod 2 = 0
+        Escribir num1," Es par"
+    SiNo
+        Escribir num1, " Es impar"
+    FinSi
+FinFuncion
+
+Funcion mayorMenorEdad(edad)
+    Si edad >= 18 Entonces
+        Escribir "La persona tiene ", edad, " Anos. [span_1](start_span)Es MAYOR de edad."[span_1](end_span)
+    SiNo
+        Si edad > 0 Entonces
+            [span_2](start_span)Escribir "La persona tiene ", edad, " Anos. Es MENOR de edad."[span_2](end_span)
+        SiNo
+            [span_3](start_span)Escribir "Edad no valida."[span_3](end_span)
+        FinSi
+    [span_4](start_span)FinSi[span_4](end_span)
+FinFuncion
+
+Funcion compararDosNumeros(n1, n2)
+    Si n1 > n2 Entonces
+        Escribir "El numero mayor es: ", n1
+    SiNo
+        Si n2 > n1 Entonces
+            Escribir "El numero mayor es: ", n2
+        SiNo
+            Escribir "Ambos numeros son iguales: ", n1, " = ", n2
+        FinSi
+    [span_5](start_span)FinSi[span_5](end_span)
+FinFuncion
+
+Funcion compararTresNumeros(n1, n2, n3)
+    Si n1 > n2 Y n1 > n3 Entonces
+        Escribir "El numero mayor de los tres es: ", n1
+    SiNo
+        Si n2 > n1 Y n2 > n3 Entonces
+            Escribir "El numero mayor de los tres es: ", n2
+        SiNo
+            [span_6](start_span)Si n3 > n1 Y n3 > n2 Entonces[span_6](end_span)
+                Escribir "El numero mayor de los tres es: ", n3
+            SiNo
+                Escribir "Hay numeros iguales o todos son iguales."
+            [span_7](start_span)FinSi[span_7](end_span)
+        FinSi
+    FinSi
+FinFuncion
+
+Funcion calcularDescuentoCompra(monto)
+    Definir descuento, totalPagar Como Real
+    Si monto > 100 Entonces
+        descuento = monto * 0.10 
+        totalPagar = monto - descuento
+        Escribir "Monto: $", monto
+        Escribir "Aplica 10% de Descuento: $", descuento
+        [span_8](start_span)Escribir "Total Neto a Pagar: $", totalPagar[span_8](end_span)
+    SiNo
+        Escribir "Monto: $", monto
+        Escribir "No aplica descuento. Total a Pagar: $", monto
+    FinSi
+FinFuncion
+
+Funcion estadoEstudiante(nota)
+    Si nota >= 70 Y nota <= 100 Entonces
+        [span_9](start_span)Escribir "Nota: ", nota, " - El estudiante esta APROBADO."[span_9](end_span)
+    SiNo
+        Si nota >= 40 Y nota < 70 Entonces
+            [span_10](start_span)Escribir "Nota: ", nota, " - El estudiante esta en SUPLETORIO."[span_10](end_span)
+        SiNo
+            Si nota >= 0 Y nota < 40 Entonces
+                [span_11](start_span)Escribir "Nota: ", nota, " - El estudiante esta REPROBADO."[span_11](end_span)
+            SiNo
+                [span_12](start_span)Escribir "Nota fuera de rango (0 - 100)."[span_12](end_span)
+            [span_13](start_span)FinSi[span_13](end_span)
+        FinSi
+    FinSi
+FinFuncion
+
+Funcion clasificarTriangulo(lado1, lado2, lado3)
+    Si lado1 = lado2 Y lado2 = lado3 Entonces
+        [span_14](start_span)Escribir "El triangulo es EQUILATERO (Todos los lados iguales)."[span_14](end_span)
+    SiNo
+        Si lado1 = lado2 O lado1 = lado3 O lado2 = lado3 Entonces
+            [span_15](start_span)Escribir "El triangulo es ISOSCELES (Dos lados iguales)."[span_15](end_span)
+        SiNo
+            [span_16](start_span)Escribir "El triangulo es ESCALENO (Todos los lados diferentes)."[span_16](end_span)
+        [span_17](start_span)FinSi[span_17](end_span)
+    FinSi
+FinFuncion
+
+SubProceso Ejercicio9Cond
+    Definir colorOpc Como Entero
+    Escribir "Elija su color favorito:"
+    Escribir "1. Rojo"
+    Escribir "2. Azul"
+    Escribir "3. Verde"
+    Escribir "4. Amarillo"
+    Escribir "Ingrese una opcion [1-4]:"
+    Leer colorOpc
+    Segun colorOpc Hacer
+        1: Escribir "Elegiste el color ROJO."
+        [span_18](start_span)2: Escribir "Elegiste el color AZUL."[span_18](end_span)
+        3: Escribir "Elegiste el color VERDE."
+        [span_19](start_span)4: Escribir "Elegiste el color AMARILLO."[span_19](end_span)
+        De Otro Modo:
+            Escribir "Opcion no valida."
+    FinSegun
+FinSubProceso
+
+SubProceso Ejercicio1
+    Definir n,i Como Entero
+    n<-0
+    Mientras n<=0 Hacer
+        Escribir "Ingrese numero positivo:"
+        Leer n
+    FinMientras
+    Para i<-1 Hasta n Hacer
+        Escribir i
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio2
+    Definir n,i,suma Como Entero
+    n<-0
+    Mientras n<=0 Hacer
+        Escribir "Ingrese un numero entero positivo:"
+        Leer n
+    FinMientras
+    suma<-0
+    Para i<-1 Hasta n Hacer
+        suma<-suma+i
+    FinPara
+    Escribir "La suma es: ", suma
+FinSubProceso
+
+SubProceso Ejercicio3
+    Definir n,i Como Entero
+    n<-0
+    Mientras n<=0 Hacer
+        Escribir "Ingrese un numero entero positivo:"
+        Leer n
+    FinMientras
+    Para i<-1 Hasta n Hacer
+        Si i%2=0 Entonces
+            [span_20](start_span)Escribir i[span_20](end_span)
+        FinSi
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio4
+    Definir n,i,suma Como Entero
+    n<-0
+    Mientras n<=0 Hacer
+        Escribir "Ingrese un numero entero positivo:"
+        Leer n
+    FinMientras
+    suma<-0
+    Para i<-1 Hasta n Hacer
+        Si i%2=0 Entonces
+            suma<-suma+i
+        FinSi
+    FinPara
+    Escribir "La suma de los pares es: ", suma
+FinSubProceso
+
+SubProceso Ejercicio5
+    Definir n,i Como Entero
+    n<-0
+    Mientras n<=0 Hacer
+        Escribir "Ingrese un numero entero positivo:"
+        Leer n
+    FinMientras
+    Para i<-1 Hasta n Hacer
+        Si i%3=0 Entonces
+            Escribir i
+        FinSi
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio6
+    Definir n,m,i Como Entero
+    n<-0
+    Mientras n<=0 Hacer
+        Escribir "Ingrese N (numero entero positivo):"
+        Leer n
+    FinMientras
+    m<-0
+    Mientras m<=0 Hacer
+        Escribir "Ingrese M (numero entero positivo):"
+        Leer m
+    FinMientras
+    Para i<-1 Hasta n Hacer
+        Si i%m=0 Entonces
+            Escribir i
+        FinSi
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio7
+    Definir n,i Como Entero
+    n<-0
+    Mientras n<=0 Hacer
+        Escribir "Ingrese un numero positivo:"
+        Leer n
+    FinMientras
+    Para i<-1 Hasta 12 Hacer
+        Escribir n," x ",i," = ",n*i
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio8
+    Definir a,b,i,resultado Como Entero
+    a<-0
+    Mientras a<=0 Hacer
+        Escribir "Ingrese el primer numero positivo:"
+        Leer a
+    FinMientras
+    b<-0
+    Mientras b<=0 Hacer
+        Escribir "Ingrese el segundo numero positivo:"
+        Leer b
+    FinMientras
+    resultado<-0
+    Para i<-1 Hasta b Hacer
+        resultado<-resultado+a
+    FinPara
+    Escribir a," x ",b," = ",resultado
+FinSubProceso
+
+SubProceso Ejercicio9
+    Definir base,exponente,i,resultado Como Entero
+    base<-0
+    Mientras base<=0 Hacer
+        Escribir "Ingrese la base positiva:"
+        Leer base
+    FinMientras
+    exponente<-0
+    Mientras exponente<=0 Hacer
+        Escribir "Ingrese el exponente positivo:"
+        Leer exponente
+    FinMientras
+    resultado<-1
+    Para i<-1 Hasta exponente Hacer
+        resultado<-resultado*base
+    FinPara
+    Escribir base,"^",exponente," = ",resultado
+FinSubProceso
+
+SubProceso Ejercicio10
+    Definir n,i Como Entero
+    Definir factorial Como Real
+    n<-0
+    Mientras n<=0 Hacer
+        Escribir "Ingrese un numero entero positivo:"
+        Leer n
+    FinMientras
+    factorial<-1
+    Para i<-1 Hasta n Hacer
+        factorial<-factorial*i
+    FinPara
+    Escribir "El factorial de ",n," es: ",factorial
+FinSubProceso
+
+SubProceso Ejercicio11
+    Definir n,i Como Entero
+    n<-0
+    Mientras n<=0 Hacer
+        Escribir "Ingrese un numero entero positivo:"
+        Leer n
+    FinMientras
+    Escribir "Divisores de ",n,":"
+    Para i<-1 Hasta n Hacer
+        Si n%i=0 Entonces
+            Escribir i
+        FinSi
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio12
+    Definir n,i,suma Como Entero
+    n<-0
+    Mientras n<=0 Hacer
+        Escribir "Ingrese un numero entero positivo:"
+        Leer n
+    FinMientras
+    suma<-0
+    Para i<-1 Hasta n-1 Hacer
+        Si n%i=0 Entonces
+            suma<-suma+i
+        FinSi
+    FinPara
+    Si suma=n Entonces
+        Escribir n," es un numero perfecto."
+    SiNo
+        [span_21](start_span)Escribir n," no es un numero perfecto."[span_21](end_span)
+    FinSi
+FinSubProceso
+
+SubProceso Ejercicio13
+    Definir n,i,contador Como Entero
+    n<-0
+    Mientras n<=0 Hacer
+        Escribir "Ingrese un numero entero positivo:"
+        Leer n
+    FinMientras
+    contador<-0
+    Para i<-1 Hasta n Hacer
+        Si n%i=0 Entonces
+            contador<-contador+1
+        FinSi
+    FinPara
+    Si contador=2 Entonces
+        Escribir n," es primo."
+    SiNo
+        [span_22](start_span)Escribir n," no es primo."[span_22](end_span)
+    FinSi
+FinSubProceso
+
+SubProceso Ejercicio14
+    Definir n,i,a,b,siguiente Como Entero
+    n<-0
+    Mientras n<=0 Hacer
+        Escribir "Ingrese un numero entero positivo:"
+        Leer n
+    FinMientras
+    a<-0
+    b<-1
+    Para i<-1 Hasta n Hacer
+        Escribir a
+        siguiente<-a+b
+        a<-b
+        b<-siguiente
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio15
+    Definir n,i,numero,contador Como Entero
+    n<-0
+    Mientras n<=0 Hacer
+        Escribir "Ingrese la cantidad de numeros a ingresar:"
+        Leer n
+    FinMientras
+    contador<-0
+    Para i<-1 Hasta n Hacer
+        Escribir "Ingrese el numero ",i,":"
+        Leer numero
+        Si numero%2=0 Entonces
+            contador<-contador+1
+        FinSi
+    FinPara
+    Escribir "Cantidad de numeros pares: ",contador
+FinSubProceso
+
+SubProceso Ejercicio16
+    Definir tamanio,i Como Entero
+    Definir arreglo Como Entero
+    tamanio<-0
+    Mientras tamanio<=0 Hacer
+        Escribir "Ingrese el tamanio del arreglo:"
+        Leer tamanio
+    FinMientras
+    Dimension arreglo[tamanio]
+    Para i<-1 Hasta tamanio Hacer
+        Escribir "Ingrese el elemento ",i,":"
+        Leer arreglo[i]
+    FinPara
+    [span_23](start_span)Escribir "Arreglo llenado correctamente."[span_23](end_span)
+FinSubProceso
+
+SubProceso Ejercicio17
+    Definir tamanio,i Como Entero
+    Definir arreglo Como Entero
+    tamanio<-0
+    Mientras tamanio<=0 Hacer
+        Escribir "Ingrese el tamanio del arreglo:"
+        Leer tamanio
+    FinMientras
+    Dimension arreglo[tamanio]
+    Para i<-1 Hasta tamanio Hacer
+        Escribir "Ingrese el elemento ",i,":"
+        Leer arreglo[i]
+    FinPara
+    Escribir "Elementos del arreglo:"
+    Para i<-1 Hasta tamanio Hacer
+        Escribir arreglo[i]
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio18
+    Definir tamanio,i Como Entero
+    Definir arreglo Como Entero
+    tamanio<-0
+    Mientras tamanio<=0 Hacer
+        Escribir "Ingrese el tamanio del arreglo:"
+        Leer tamanio
+    FinMientras
+    Dimension arreglo[tamanio]
+    Para i<-1 Hasta tamanio Hacer
+        Escribir "Ingrese el elemento ",i,":"
+        Leer arreglo[i]
+    FinPara
+    Escribir "Numeros pares del arreglo:"
+    Para i<-1 Hasta tamanio Hacer
+        Si arreglo[i]%2=0 Entonces
+            Escribir arreglo[i]
+        FinSi
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio19
+    [span_24](start_span)Definir tamanio,i Como Entero[span_24](end_span)
+    Definir arreglo Como Entero
+    tamanio<-0
+    Mientras tamanio<=0 Hacer
+        Escribir "Ingrese el tamanio del arreglo:"
+        Leer tamanio
+    FinMientras
+    Dimension arreglo[tamanio]
+    Para i<-1 Hasta tamanio Hacer
+        Escribir "Ingrese el elemento ",i,":"
+        Leer arreglo[i]
+    FinPara
+    Escribir "Numeros impares del arreglo:"
+    Para i<-1 Hasta tamanio Hacer
+        Si arreglo[i]%2<>0 Entonces
+            Escribir arreglo[i]
+        FinSi
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio20
+    Definir tamanio,i,suma Como Entero
+    Definir arreglo Como Entero
+    tamanio<-0
+    Mientras tamanio<=0 Hacer
+        Escribir "Ingrese el tamanio del arreglo:"
+        Leer tamanio
+    FinMientras
+    Dimension arreglo[tamanio]
+    Para i<-1 Hasta tamanio Hacer
+        Escribir "Ingrese el elemento ",i,":"
+        Leer arreglo[i]
+    FinPara
+    suma<-0
+    Para i<-1 Hasta tamanio Hacer
+        suma<-suma+arreglo[i]
+    FinPara
+    Escribir "La suma de los elementos es: ",suma
+FinSubProceso
+
+SubProceso Ejercicio21
+    Definir tamanio,i,suma Como Entero
+    Definir promedio Como Real
+    Definir arreglo Como Entero
+    tamanio<-0
+    [span_25](start_span)Mientras tamanio<=0 Hacer[span_25](end_span)
+        Escribir "Ingrese el tamanio del arreglo:"
+        Leer tamanio
+    FinMientras
+    Dimension arreglo[tamanio]
+    Para i<-1 Hasta tamanio Hacer
+        Escribir "Ingrese el elemento ",i,":"
+        Leer arreglo[i]
+    FinPara
+    suma<-0
+    Para i<-1 Hasta tamanio Hacer
+        suma<-suma+arreglo[i]
+    FinPara
+    promedio<-suma/tamanio
+    Escribir "El promedio del arreglo es: ",promedio
+FinSubProceso
+
+SubProceso guia4Ejercicio22
+    Definir n, i Como Entero
+    Definir sueldos Como Real
+    n = 0
+    Mientras n <= 0 Hacer
+        [span_26](start_span)Escribir " Cuantos sueldos desea registrar? (Positivo):"[span_26](end_span)
+        Leer n
+    FinMientras
+    Dimension sueldos[n]
+    Para i = 1 Hasta n Con Paso 1 Hacer
+        Escribir "Ingrese el sueldo ", i, ":"
+        Leer sueldos[i]
+    FinPara
+    Escribir "Sueldos mayores al salario basico ($470):"
+    Para i = 1 Hasta n Con Paso 1 Hacer
+        Si sueldos[i] > 470 Entonces
+            Escribir "$", sueldos[i]
+        FinSi
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio23
+    Definir tamanio,i Como Entero
+    Definir precios Como Real
+    tamanio<-0
+    Mientras tamanio<=0 Hacer
+        Escribir "Ingrese la cantidad de precios:"
+        Leer tamanio
+    FinMientras
+    Dimension precios[tamanio]
+    Para i<-1 Hasta tamanio Hacer
+        Escribir "Ingrese el precio ",i,":"
+        Leer precios[i]
+    FinPara
+    Para i<-1 Hasta tamanio Hacer
+        Si precios[i]>100 Entonces
+            precios[i]<-precios[i]+precios[i]*0.10
+        FinSi
+    FinPara
+    Escribir "Nuevo arreglo de precios:"
+    Para i<-1 Hasta tamanio Hacer
+        Escribir precios[i]
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio24
+    [span_27](start_span)Definir tamanio,i,mayor Como Entero[span_27](end_span)
+    Definir arreglo Como Entero
+    tamanio<-0
+    Mientras tamanio<=0 Hacer
+        Escribir "Ingrese el tamanio del arreglo:"
+        Leer tamanio
+    FinMientras
+    Dimension arreglo[tamanio]
+    Para i<-1 Hasta tamanio Hacer
+        Escribir "Ingrese el elemento ",i,":"
+        Leer arreglo[i]
+    FinPara
+    mayor<-arreglo[1]
+    Para i<-2 Hasta tamanio Hacer
+        Si arreglo[i]>mayor Entonces
+            mayor<-arreglo[i]
+        FinSi
+    FinPara
+    Escribir "El mayor elemento es: ",mayor
+FinSubProceso
+
+SubProceso Ejercicio25
+    Definir tamanio,i,menor Como Entero
+    Definir arreglo Como Entero
+    tamanio<-0
+    Mientras tamanio<=0 Hacer
+        Escribir "Ingrese el tamanio del arreglo:"
+        Leer tamanio
+    FinMientras
+    Dimension arreglo[tamanio]
+    Para i<-1 Hasta tamanio Hacer
+        Escribir "Ingrese el elemento ",i,":"
+        Leer arreglo[i]
+    FinPara
+    menor<-arreglo[1]
+    Para i<-2 Hasta tamanio Hacer
+        Si arreglo[i]<menor Entonces
+            menor<-arreglo[i]
+        FinSi
+    FinPara
+    Escribir "El menor elemento es: ",menor
+FinSubProceso
+
+SubProceso Ejercicio26
+    Definir cadenaTexto Como Caracter
+    Definir i,long Como Entero
+    Escribir "Ingrese una cadena:"
+    Leer cadenaTexto
+    long<-Longitud(cadenaTexto)
+    Para i<-1 Hasta long Hacer
+        Escribir SubCadena(cadenaTexto,i,i)
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio27
+    Definir frase Como Caracter
+    Definir letra Como Caracter
+    Definir i,long Como Entero
+    Escribir "Ingrese una frase:"
+    Leer frase
+    long<-Longitud(frase)
+    Escribir "Vocales encontradas:"
+    Para i<-1 Hasta long Hacer
+        letra<-SubCadena(frase,i,i)
+        Si letra="a" O letra="e" O letra="i" O letra="o" O letra="u" O letra="A" O letra="E" O letra="I" O letra="O" O letra="U" Entonces
+            Escribir letra
+        FinSi
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio28
+    Definir frase Como Caracter
+    Definir letra,comilla Como Caracter
+    Definir i,long Como Entero
+    comilla<-Caracter(34)
+    Escribir "Ingrese una frase:"
+    Leer frase
+    long<-Longitud(frase)
+    Escribir "Consonantes encontradas:"
+    Para i<-1 Hasta long Hacer
+        letra<-SubCadena(frase,i,i)
+        Si letra<>"a" Y letra<>"e" Y letra<>"i" Y letra<>"o" Y letra<>"u" Y letra<>"A" Y letra<>"E" Y letra<>"I" Y letra<>"O" Y letra<>"U" Y letra<>" " Y letra<>"." Y letra<>"," Y letra<>";" Y letra<>":" Y letra<>"¿" Y letra<>"?" Y letra<>"¡" Y letra<>"!" [span_28](start_span)Y letra<>"(" Y letra<>")" Y letra<>comilla Y letra<>"'" Entonces[span_28](end_span)
+            Escribir letra
+        FinSi
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio29
+    Definir frase Como Caracter
+    Definir letra,comilla Como Caracter
+    Definir i,long Como Entero
+    comilla<-Caracter(34)
+    Escribir "Ingrese una frase:"
+    Leer frase
+    long<-Longitud(frase)
+    Escribir "Signos de puntuacion encontrados:"
+    Para i<-1 Hasta long Hacer
+        letra<-SubCadena(frase,i,i)
+        Si letra="." O letra="," O letra=";" O letra=":" O letra="¿" O letra="?" O letra="¡" O letra="!" O letra="(" O letra=")" O letra=comilla O letra="'" Entonces
+            Escribir letra
+        FinSi
+    FinPara
+FinSubProceso
+
+SubProceso Ejercicio30
+    Definir frase Como Caracter
+    [span_29](start_span)Definir letra Como Caracter[span_29](end_span)
+    Definir i,long,contador Como Entero
+    Escribir "Ingrese una frase:"
+    Leer frase
+    long<-Longitud(frase)
+    contador<-0
+    Para i<-1 Hasta long Hacer
+        letra<-SubCadena(frase,i,i)
+        Si letra=" " Entonces
+            contador<-contador+1
+        FinSi
+    FinPara
+    contador<-contador+1
+    Escribir "La frase contiene ",contador," palabras."
+FinSubProceso
